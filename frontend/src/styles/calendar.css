@@ -1,0 +1,454 @@
+/* Team Checkout Container */
+.team-checkout-container {
+  height: calc(100vh - 64px); /* Full viewport height minus header */
+  display: flex;
+  flex-direction: column; /* Keep this for layout */
+  /* overflow: hidden; */ /* REMOVE THIS LINE */
+}
+
+/* Header Date Picker Styling */
+.header-date-picker {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 0;
+  margin: 0;
+  border: none;
+}
+
+.header-date-picker .date-nav-button {
+  background: var(--color-bg-tertiary);
+  border: 1px solid #555;
+  color: var(--color-text-primary);
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.header-date-picker .date-nav-button:hover {
+  background: #555;
+  border-color: #777;
+}
+
+.header-date-picker .date-display {
+  text-align: center;
+  min-width: 180px;
+}
+
+.header-date-picker .current-date {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin-bottom: 2px;
+}
+
+.header-date-picker .full-date {
+  font-size: 11px;
+  color: var(--color-text-secondary);
+}
+
+/* Error Messages */
+.error {
+  background-color: #fee;
+  border: 1px solid #fcc;
+  color: #c33;
+  padding: 12px;
+  border-radius: 6px;
+  margin-bottom: 16px;
+  font-size: 14px;
+}
+
+/* Timeline Container - Full Height */
+.timeline-container {
+  background: var(--color-bg-secondary);
+  border-radius: var(--border-radius-lg);
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: auto;
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+
+.timeline-container.full-height {
+  height: 100%;
+  max-height: none;
+}
+
+.timeline-grid {
+  display: grid;
+  grid-template-columns: 60px repeat(var(--user-count), 1fr);
+  gap: 0;
+  min-width: 800px;
+  padding: 0;
+}
+
+/* Weekly calendar uses a different grid layout */
+.timeline-grid.weekly-grid {
+  grid-template-columns: repeat(var(--user-count), 1fr);
+}
+
+/* Sticky Header Styling - Fixed positioning */
+.sticky-header {
+  position: sticky;
+  top: 0; /* This makes it stick to the top of its scrolling parent (.timeline-container) */
+  background: var(--color-bg-secondary) !important;
+  z-index: 100; 
+  border-bottom: 2px solid var(--color-border);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Time Labels */
+.time-label {
+  font-size: 12px;
+  color: var(--color-text-secondary);
+  text-align: center;
+  padding: var(--spacing-sm) var(--spacing-xs);
+  border-right: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-bg-secondary);
+  min-height: 40px;
+  position: sticky;
+  left: 0;
+  z-index: 50;
+}
+
+.time-label.time-header {
+  font-weight: 600;
+  color: var(--color-text-primary);
+  min-height: 80px;
+  border-right: 2px solid var(--color-border);
+}
+
+.time-label.sticky-header {
+  z-index: 150; /* This was in your original code, likely to keep the corner label above user headers if they overlapped */
+  position: sticky;
+  left: 0;
+}
+
+/* User Header Container */
+.user-header-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--spacing-md) var(--spacing-sm);
+  text-align: center;
+  border-right: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+  position: relative;
+  min-height: 80px;
+  background: var(--color-bg-secondary);
+}
+
+.user-header-container.sticky-header {
+  border-bottom: 2px solid var(--color-border);
+  border-right: 2px solid var(--color-border);
+}
+
+.user-header-container:hover {
+  z-index: 300;
+}
+
+/* User Headers */
+.user-header {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+}
+
+.user-name {
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--color-text-primary);
+  margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.local-time {
+  font-family: var(--font-family-mono);
+  font-size: 18px;
+  margin-bottom: 2px;
+  font-weight: 600;
+}
+
+.timezone-label {
+  font-size: 11px;
+  color: var(--color-text-secondary);
+}
+
+.online-indicator {
+  width: 6px;
+  height: 6px;
+  background: #22c55e;
+  border-radius: 50%;
+}
+
+/* Time of day colors for local time display */
+.local-time.early-morning { color: #6366f1; }
+.local-time.morning { color: #f59e0b; }
+.local-time.midday { color: #eab308; }
+.local-time.afternoon { color: #f97316; }
+.local-time.evening { color: #ef4444; }
+.local-time.night { color: #926bec; }
+.local-time.late-night { color: #3b82f6; }
+
+/* Ignore Button */
+.ignore-button {
+  position: absolute;
+  right: -8px;
+  top: -8px;
+  width: 20px;
+  height: 20px;
+  background-color: var(--color-danger);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  font-size: 12px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  z-index: 250; /* Highest z-index for buttons */
+}
+
+.ignore-button:hover {
+  background-color: var(--color-danger-hover);
+  transform: scale(1.1);
+}
+
+/* Timeline Cells and Bars */
+.timeline-cell {
+  height: 40px;
+  position: relative;
+  border-right: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+  background: var(--color-bg-primary);
+}
+
+/* Row hover effect - highlight entire row when hovering any cell */
+.timeline-grid {
+  position: relative;
+}
+
+/* Create hover effect for each hour row - highlight entire row across all columns */
+.timeline-grid:has(.timeline-row-0:hover) .timeline-row-0,
+.timeline-grid:has(.timeline-row-1:hover) .timeline-row-1,
+.timeline-grid:has(.timeline-row-2:hover) .timeline-row-2,
+.timeline-grid:has(.timeline-row-3:hover) .timeline-row-3,
+.timeline-grid:has(.timeline-row-4:hover) .timeline-row-4,
+.timeline-grid:has(.timeline-row-5:hover) .timeline-row-5,
+.timeline-grid:has(.timeline-row-6:hover) .timeline-row-6,
+.timeline-grid:has(.timeline-row-7:hover) .timeline-row-7,
+.timeline-grid:has(.timeline-row-8:hover) .timeline-row-8,
+.timeline-grid:has(.timeline-row-9:hover) .timeline-row-9,
+.timeline-grid:has(.timeline-row-10:hover) .timeline-row-10,
+.timeline-grid:has(.timeline-row-11:hover) .timeline-row-11,
+.timeline-grid:has(.timeline-row-12:hover) .timeline-row-12,
+.timeline-grid:has(.timeline-row-13:hover) .timeline-row-13,
+.timeline-grid:has(.timeline-row-14:hover) .timeline-row-14,
+.timeline-grid:has(.timeline-row-15:hover) .timeline-row-15,
+.timeline-grid:has(.timeline-row-16:hover) .timeline-row-16,
+.timeline-grid:has(.timeline-row-17:hover) .timeline-row-17,
+.timeline-grid:has(.timeline-row-18:hover) .timeline-row-18,
+.timeline-grid:has(.timeline-row-19:hover) .timeline-row-19,
+.timeline-grid:has(.timeline-row-20:hover) .timeline-row-20,
+.timeline-grid:has(.timeline-row-21:hover) .timeline-row-21,
+.timeline-grid:has(.timeline-row-22:hover) .timeline-row-22,
+.timeline-grid:has(.timeline-row-23:hover) .timeline-row-23 {
+  background-color: rgba(255, 255, 255, 0.015) !important;
+  transition: background-color 0.15s ease;
+}
+
+.session-bar {
+  position: absolute;
+  left: 0;
+  right: 0;
+  border-radius: var(--border-radius);
+  height: 80%;
+  top: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  font-weight: 500;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+/* Prediction bars - semi-translucent with lighter colors */
+.prediction-bar {
+  position: absolute;
+  left: 0;
+  right: 0;
+  border-radius: var(--border-radius);
+  height: 85%;
+  top: 7.5%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 9px;
+  font-weight: 400;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  transition: opacity 0.2s ease;
+}
+
+.prediction-bar:hover {
+  opacity: 0.8 !important;
+}
+
+/* Online Status */
+.online-status {
+  color: var(--color-success);
+  font-size: 12px;
+  margin-left: var(--spacing-xs);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { opacity: 1; }
+  50% { opacity: 0.5; }
+  100% { opacity: 1; }
+}
+
+/* User-specific colors for sessions */
+.session-sarah { background-color: #4A90E2; color: white; }
+.session-till { background-color: #F5A623; color: white; }
+.session-alex { background-color: #BD10E0; color: white; }
+.session-mike { background-color: #50C878; color: white; }
+
+/* Default colors for other users */
+.session-default-0 { background-color: #4A90E2; }
+.session-default-1 { background-color: #F5A623; }
+.session-default-2 { background-color: #BD10E0; }
+.session-default-3 { background-color: #50C878; }
+.session-default-4 { background-color: #E74C3C; }
+.session-default-5 { background-color: #9B59B6; }
+
+/* Current Time Line */
+.current-time-line {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: var(--color-danger);
+  z-index: 10;
+  box-shadow: 0 0 4px rgba(255, 68, 68, 0.8);
+}
+
+/* Activity Events */
+.activity-event {
+  transition: all 0.2s ease;
+}
+
+.activity-event:hover {
+  transform: scale(1.2);
+  z-index: 25 !important;
+}
+
+/* Git commit events - green half-round bubble at bottom */
+.activity-event[data-kind="git_commit"] {
+  background-color: #22c55e !important;
+}
+
+.activity-event[data-kind="git_commit"]:hover {
+  background-color: #16a34a !important;
+}
+
+/* Loading and Error States */
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 200px;
+  color: var(--color-text-secondary);
+  font-size: 16px;
+}
+
+/* Remove old styles that are no longer needed */
+.container {
+  /* Remove this class if it exists */
+  display: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .team-checkout-container {
+    height: calc(100vh - 56px); /* Smaller header on mobile */
+  }
+  
+  .timeline-grid {
+    min-width: 600px;
+  }
+  
+  /* Mobile-optimized date picker */
+  .header-date-picker {
+    gap: 8px; /* Reduced gap for mobile */
+  }
+  
+  .header-date-picker .date-display {
+    min-width: 120px; /* Further reduced width */
+  }
+  
+  .header-date-picker .current-date {
+    font-size: 13px; /* Smaller font */
+  }
+  
+  .header-date-picker .full-date {
+    font-size: 9px; /* Smaller font */
+    display: none; /* Hide full date on very small screens */
+  }
+  
+  .header-date-picker .date-nav-button {
+    width: 36px; /* Larger touch target */
+    height: 36px; /* Larger touch target */
+    font-size: 18px; /* Larger arrows */
+  }
+  
+  .timeline-container {
+    padding: 0;
+  }
+  
+  /* Ensure time labels remain sticky on mobile */
+  .time-label {
+    min-height: 28px;
+    font-size: 10px;
+  }
+  
+  .time-label.time-header {
+    min-height: 60px;
+  }
+}
+
+/* For very small screens (phones in portrait) */
+@media (max-width: 480px) {
+  .header-date-picker .date-display {
+    min-width: 100px; /* Even smaller width */
+  }
+  
+  .header-date-picker .current-date {
+    font-size: 12px;
+  }
+  
+  .header-date-picker .full-date {
+    display: none; /* Keep hidden on small screens */
+  }
+  
+  .header-date-picker {
+    gap: 6px; /* Tighter spacing */
+  }
+}

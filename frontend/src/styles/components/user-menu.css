@@ -1,0 +1,102 @@
+/* frontend/src/styles/components/user-menu.css */
+.user-menu {
+  position: relative;
+}
+
+.user-menu-button {
+  background: var(--color-bg-tertiary);
+  color: var(--color-text-primary);
+  border: 1px solid var(--color-border-light);
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+  min-width: 120px;
+  justify-content: space-between;
+}
+
+.user-menu-button:hover {
+  background: #444;
+  border-color: var(--color-text-muted);
+}
+
+.user-menu-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border-light);
+  border-radius: 6px;
+  margin-top: 4px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  z-index: 300;
+  min-width: 200px;
+  overflow: hidden;
+}
+
+.user-menu-info {
+  padding: var(--spacing-md) var(--spacing-lg);
+  background: var(--color-bg-tertiary);
+}
+
+.user-name {
+  font-weight: 600;
+  color: var(--color-text-primary);
+  font-size: 14px;
+  margin-bottom: 2px;
+}
+
+.user-email {
+  font-size: 12px;
+  color: var(--color-text-secondary);
+}
+
+.user-menu-divider {
+  border: none;
+  border-top: 1px solid var(--color-border-light);
+  margin: 0;
+}
+
+.settings-menu-item,
+.logout-menu-item {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  width: 100%;
+  padding: var(--spacing-md) var(--spacing-lg);
+  background: none;
+  border: none;
+  color: var(--color-text-primary);
+  text-align: left;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.2s;
+}
+
+.settings-menu-item:hover {
+  background: var(--color-bg-tertiary);
+}
+
+.logout-menu-item:hover {
+  background: #dc2626;
+}
+
+@media (max-width: 768px) {
+  .user-menu-button {
+    min-width: auto;
+    padding: 6px 10px;
+    font-size: 12px;
+  }
+  
+  .user-menu-dropdown {
+    min-width: 180px;
+  }
+  
+  .user-name, .user-email {
+    font-size: 12px;
+  }
+}

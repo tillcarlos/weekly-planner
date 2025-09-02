@@ -1,0 +1,40 @@
+# Add patterns to ignore here, one per line
+# Example:
+# *.log
+# tmp/
+
+# Build and package files
+package-lock.json
+pnpm-lock.yaml
+frontend/package-lock.json
+node_modules/
+
+# IDE and system files
+.DS_Store
+.vscode/
+.idea/
+*.log
+.iterm_tab_color
+.env*
+.gitignore
+repomix-output.xml
+
+# TypeScript build outputs
+dist/
+build/
+drizzle/meta/
+
+# Documentation and prototypes
+docs/ui_prototype/
+docs/research.md
+
+client/dist/
+data/
+frontend/dist/
+test/
+
+src/pages/IntegrationDetailsPage.tsx
+
+
+
+

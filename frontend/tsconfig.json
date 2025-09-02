@@ -1,0 +1,30 @@
+{
+  "compilerOptions": {
+    "target": "ES2020", // Or "ESNext"
+    "useDefineForClassFields": true,
+    "lib": ["ES2020", "DOM", "DOM.Iterable"], // Crucial: includes DOM types for browser environment
+    "module": "ESNext", // Vite uses ES modules
+    "skipLibCheck": true,
+
+    /* Bundler mode */
+    "moduleResolution": "bundler", // Or "node" if you prefer, but "bundler" is often recommended with Vite
+    "allowImportingTsExtensions": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true, // Good practice for modern bundlers
+    "noEmit": true, // Vite handles the emitting/bundling, tsc is just for type checking
+    "jsx": "react-jsx", // Modern JSX transform
+
+    /* Linting */
+    "strict": true,
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
+    "noFallthroughCasesInSwitch": true,
+
+    /* Path Aliases (optional, but matches the vite.config.ts example) */
+    "baseUrl": ".", // Base for path aliases is the 'client' directory
+    "paths": {
+      "@/*": ["./src/*"] // Example: @/components/* maps to client/src/components/*
+    }
+  },
+  "include": ["src", "vite.config.ts"] // Include your frontend source code and Vite config for type checking
+}

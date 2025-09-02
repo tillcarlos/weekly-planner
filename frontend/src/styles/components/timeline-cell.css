@@ -1,0 +1,37 @@
+/* Add this to your src/styles/calendar.css file */
+
+/* Activity Events */
+.activity-event {
+  transition: all 0.2s ease;
+}
+
+.activity-event:hover {
+  transform: scale(1.2);
+  z-index: 25 !important;
+}
+
+/* Git commit events - green half-round bubble at bottom */
+.activity-event[data-kind="git_commit"] {
+  background-color: #22c55e !important;
+}
+
+.activity-event[data-kind="git_commit"]:hover {
+  background-color: #16a34a !important;
+}
+
+/* Ensure events are visible above session bars */
+.timeline-cell {
+  position: relative;
+}
+
+.session-bar {
+  z-index: 1;
+}
+
+.activity-event {
+  z-index: 20;
+}
+
+.current-time-line {
+  z-index: 10;
+}

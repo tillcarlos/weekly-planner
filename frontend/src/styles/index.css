@@ -1,0 +1,47 @@
+/* frontend/src/index.css - Main styles entry point */
+
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --color-bg-primary: #1a1a1a;
+    --color-bg-secondary: #2a2a2a;
+    --color-bg-tertiary: #333;
+    --color-border: #404040;
+    --color-border-light: #555;
+    
+    --color-text-primary: #e5e5e5;
+    --color-text-secondary: #999;
+    --color-text-muted: #666;
+    
+    --color-primary: #4A90E2;
+    --color-primary-hover: #357ABD;
+    --color-success: #50c878;
+    --color-success-hover: #45b06a;
+    --color-danger: #ff4444;
+    --color-danger-hover: #ff6666;
+    --color-warning: #f97316;
+    --color-warning-hover: #ea580c;
+    
+    --border-radius: 4px;
+    --border-radius-lg: 8px;
+    --border-radius-xl: 12px;
+    
+    --spacing-xs: 4px;
+    --spacing-sm: 8px;
+    --spacing-md: 12px;
+    --spacing-lg: 16px;
+    --spacing-xl: 20px;
+    --spacing-2xl: 24px;
+    --spacing-3xl: 32px;
+    
+    --font-family-mono: 'Monaco', 'Menlo', 'Consolas', monospace;
+  }
+}
+
+/* Rest of your imports */
+@import "./calendar.css";
+@import './components/header.css';
+@import './components/user-menu.css';
+@import './components/account-settings.css';
+@import './components/timeline-cell.css';

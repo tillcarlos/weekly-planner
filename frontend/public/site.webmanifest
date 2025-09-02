@@ -1,0 +1,22 @@
+{
+  "name": "StatsAware",
+  "short_name": "StatsAware",
+  "description": "Remote Team Activity Tracker",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "/favicon.ico",
+      "sizes": "16x16 32x32",
+      "type": "image/x-icon"
+    }
+  ],
+  "theme_color": "#2563eb",
+  "background_color": "#101828",
+  "display": "standalone",
+  "start_url": "/",
+  "scope": "/"
+}
