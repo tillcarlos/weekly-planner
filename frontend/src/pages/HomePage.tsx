@@ -15,8 +15,15 @@ export const HomePage: React.FC = () => {
           
           <div className="space-y-4">
             <Link 
-              to="/login" 
+              to="/daily" 
               className="inline-block bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700 transition"
+            >
+              Daily Overview
+            </Link>
+            
+            <Link 
+              to="/login" 
+              className="inline-block ml-4 bg-gray-600 text-white px-6 py-2 rounded-md hover:bg-gray-700 transition"
             >
               Login
             </Link>

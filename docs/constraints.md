@@ -6,3 +6,5 @@ These are rules of the system. Use them for tests mainly.
 
 A goal should only have task completions in a certain week. No task activities outside the week where the goal was set it.
 
+A goal has at least one task before the user can start their day.
+
