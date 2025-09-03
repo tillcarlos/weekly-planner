@@ -6,6 +6,7 @@ import { SignupPage } from './pages/SignupPage';
 import { ProfilePage } from './pages/ProfilePage';
 import { HomePage } from './pages/HomePage';
 import { DailyOverviewPage } from './pages/DailyOverviewPage';
+import { WeeklyOverviewPage } from './pages/WeeklyOverviewPage';
 
 const App: React.FC = () => {
   return (
@@ -14,6 +15,7 @@ const App: React.FC = () => {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/daily" element={<DailyOverviewPage />} />
+          <Route path="/weekly" element={<WeeklyOverviewPage />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/signup" element={<SignupPage />} />
           <Route path="/profile" element={<ProfilePage />} />

@@ -33,6 +33,7 @@ interface TeamMember {
   avatarColor: string;
   loginTime: string;
   loginTimeAgo: string;
+  netWorkTime?: string;
 }
 
 const mockTeamData: TeamMember[] = [
@@ -52,11 +53,12 @@ const mockTeamData: TeamMember[] = [
       { id: '6', goalId: '2', title: 'Finalize goal', htmlContent: 'Finalize <b>weekly planner MVP</b>', isCompleted: false },
       { id: '7', title: 'Update CLAUDE.md', htmlContent: 'Update <u>CLAUDE.md</u> with new architecture', isCompleted: false }
     ],
-    checkoutMessage: { id: '1', message: 'Auth system deployed to staging. Found Safari redirect issue, will fix tomorrow.', timestamp: '17:30' },
+    checkoutMessage: { id: '1', message: 'Auth system deployed to <a href="#" class="text-cyan-400 underline">staging</a>. Found Safari redirect issue, will fix tomorrow.', timestamp: '17:30' },
     hasCheckedOut: true,
     avatarColor: 'bg-cyan-500',
     loginTime: '08:45',
-    loginTimeAgo: '7h ago'
+    loginTimeAgo: '7h ago',
+    netWorkTime: '8.8h'
   },
   {
     id: '2',
@@ -73,11 +75,12 @@ const mockTeamData: TeamMember[] = [
       { id: '12', goalId: '4', title: 'Finalize goal', htmlContent: 'Finalize <b>API rate limiting</b>', isCompleted: false },
       { id: '13', title: 'Daily standup notes', htmlContent: 'Prepare <i>standup notes</i> for team sync', isCompleted: true }
     ],
-    checkoutMessage: { id: '2', message: 'DB optimization complete - 40% faster queries. Starting rate limiting implementation.', timestamp: '16:45' },
+    checkoutMessage: { id: '2', message: 'DB optimization complete - <b>40% faster queries</b>. Starting <a href="#" class="text-cyan-400 underline">rate limiting</a> implementation.', timestamp: '16:45' },
     hasCheckedOut: true,
     avatarColor: 'bg-emerald-400',
     loginTime: '09:15',
-    loginTimeAgo: '6h ago'
+    loginTimeAgo: '6h ago',
+    netWorkTime: '7.5h'
   },
   {
     id: '3',
@@ -93,11 +96,12 @@ const mockTeamData: TeamMember[] = [
       { id: '17', goalId: '6', title: 'Deploy pipeline to prod', htmlContent: 'Deploy <b>CI/CD pipeline</b> to production', isCompleted: true },
       { id: '18', goalId: '6', title: 'Finalize goal', htmlContent: 'Finalize <b>CI/CD pipeline</b>', isCompleted: true }
     ],
-    checkoutMessage: { id: '3', message: 'CI/CD pipeline live! All tests passing. Grafana setup 80% done.', timestamp: '18:15' },
+    checkoutMessage: { id: '3', message: '<b>CI/CD pipeline live!</b> All tests passing. <a href="#" class="text-cyan-400 underline">Grafana setup</a> 80% done.', timestamp: '18:15' },
     hasCheckedOut: true,
     avatarColor: 'bg-purple-400',
     loginTime: '07:30',
-    loginTimeAgo: '8h ago'
+    loginTimeAgo: '8h ago',
+    netWorkTime: '10.8h'
   },
   {
     id: '4',
@@ -132,11 +136,12 @@ const mockTeamData: TeamMember[] = [
       { id: '27', goalId: '10', title: 'API docs with Swagger', htmlContent: 'Setup <a href="#" class="text-cyan-400 underline">Swagger docs</a>', isCompleted: true },
       { id: '28', goalId: '10', title: 'Finalize goal', htmlContent: 'Finalize <b>documentation overhaul</b>', isCompleted: true }
     ],
-    checkoutMessage: { id: '4', message: 'Security audit complete - all critical issues resolved. API docs now live with interactive examples.', timestamp: '15:20' },
+    checkoutMessage: { id: '4', message: '<b>Security audit complete</b> - all critical issues resolved. <a href="#" class="text-cyan-400 underline">API docs</a> now live with interactive examples.', timestamp: '15:20' },
     hasCheckedOut: true,
     avatarColor: 'bg-pink-400',
     loginTime: '08:00',
-    loginTimeAgo: '7h ago'
+    loginTimeAgo: '7h ago',
+    netWorkTime: '7.3h'
   },
   {
     id: '6',
@@ -171,11 +176,12 @@ const mockTeamData: TeamMember[] = [
       { id: '37', goalId: '14', title: 'Split test implementation', htmlContent: 'Implement <a href="#" class="text-cyan-400 underline">split testing</a> with LaunchDarkly', isCompleted: false },
       { id: '38', goalId: '14', title: 'Finalize goal', htmlContent: 'Finalize <b>A/B test checkout flow</b>', isCompleted: false }
     ],
-    checkoutMessage: { id: '5', message: 'Onboarding flow designs approved by stakeholders. A/B test setup in progress.', timestamp: '14:30' },
+    checkoutMessage: { id: '5', message: '<b>Onboarding flow designs approved</b> by stakeholders. <a href="#" class="text-cyan-400 underline">A/B test setup</a> in progress.', timestamp: '14:30' },
     hasCheckedOut: true,
     avatarColor: 'bg-indigo-400',
     loginTime: '09:00',
-    loginTimeAgo: '6h ago'
+    loginTimeAgo: '6h ago',
+    netWorkTime: '5.5h'
   },
   {
     id: '8',

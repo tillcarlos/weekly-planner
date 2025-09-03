@@ -17,6 +17,12 @@ export const MainNav: React.FC = () => {
         Daily
       </Link>
       <Link 
+        to="/weekly" 
+        className="text-cyan-400 hover:text-cyan-300 text-xs font-medium transition"
+      >
+        Weekly
+      </Link>
+      <Link 
         to="/profile" 
         className="text-cyan-400 hover:text-cyan-300 text-xs font-medium transition"
       >
