@@ -23,6 +23,12 @@ export const MainNav: React.FC = () => {
         Weekly
       </Link>
       <Link 
+        to="/me" 
+        className="text-cyan-400 hover:text-cyan-300 text-xs font-medium transition"
+      >
+        My Week
+      </Link>
+      <Link 
         to="/profile" 
         className="text-cyan-400 hover:text-cyan-300 text-xs font-medium transition"
       >

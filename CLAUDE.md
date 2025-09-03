@@ -51,3 +51,23 @@ Currently targeting Milestone 1 (POC) which focuses on:
 - Displaying all tasks in a weekly view
 
 The codebase is in early stages with documentation-first development. No implementation exists yet.
+
+## UI/UX Guidelines
+
+### Interactive Elements
+**CRITICAL**: All interactive elements (buttons, links, clickable areas) MUST include `cursor-pointer` in their className. This includes:
+- All `<button>` elements
+- All `<Link>` elements from React Router
+- Any element with `onClick` handlers
+- Any clickable UI components
+
+**Example:**
+```tsx
+<button className="bg-blue-500 hover:bg-blue-600 cursor-pointer">Click me</button>
+<Link to="/page" className="text-blue-500 hover:text-blue-600 cursor-pointer">Go to page</Link>
+```
+
+**Exception**: Use `cursor-not-allowed` for disabled interactive elements:
+```tsx
+<button disabled className="opacity-50 cursor-not-allowed">Disabled</button>
+```

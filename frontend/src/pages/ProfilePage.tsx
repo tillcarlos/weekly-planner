@@ -101,7 +101,7 @@ export const ProfilePage: React.FC = () => {
             <div className="flex items-center space-x-4">
               <button 
                 onClick={logout}
-                className="text-red-400 hover:text-red-300 text-sm font-medium transition"
+                className="text-red-400 hover:text-red-300 text-sm font-medium transition cursor-pointer"
               >
                 Logout
               </button>

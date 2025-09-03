@@ -98,8 +98,8 @@ export const TeamMemberCard: React.FC<TeamMemberCardProps> = ({ member }) => {
           
           {goallessTasks.length > 0 && (
             <div className="space-y-2">
-              <h4 className="text-sm font-medium text-gray-400">Other Tasks</h4>
-              <div className="ml-2 space-y-1">
+              <h4 className="text-sm font-medium text-gray-400">Daily Tasks</h4>
+              <div className="space-y-1">
                 {goallessTasks.filter(task => task.isCompleted).map((task) => (
                   <div key={task.id} className="flex items-center text-xs">
                     <CheckCircle className="h-3 w-3 text-lime-400 mr-2" />
